@@ -1,0 +1,15 @@
+version: '3'
+services:
+  php:
+    build:
+      ./config/php
+    ports:
+      - 8001:80
+    networks:
+      - dev
+    volumes:
+      - ./app:/var/www
+      - ./config/vhosts:/etc/apache2/sites-enabled
+
+networks:
+  dev:
